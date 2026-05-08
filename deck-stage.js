@@ -123,6 +123,8 @@
     }
 
     .overlay {
+      /* Lower nav pagination intentionally hidden — left rail is the primary nav. */
+      display: none !important;
       position: fixed;
       left: 50%;
       bottom: 22px;
