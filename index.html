@@ -8,7 +8,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 /* ── TOKENS (carried over from MyUS Design System v1) ───────────── */
@@ -56,9 +56,10 @@
   --text-subtle: var(--ink-400);
 
   /* Type */
+  /* Single-family system — Poppins everywhere, including numeric data
+     (handled with tabular-nums + tighter tracking, no separate mono family). */
   --font-ui: "Poppins", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
   --font-display: "Poppins", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
   /* Spacing (8pt) */
   --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px; --s-5: 20px;
@@ -157,7 +158,7 @@ a { color: inherit; }
   display: inline-block;
 }
 .header__brand .ver {
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 11px;
   font-weight: 500;
   color: var(--text-muted);
@@ -214,7 +215,7 @@ a { color: inherit; }
 }
 .sidebar__group { margin-bottom: var(--s-5); }
 .sidebar__grouplabel {
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 10.5px;
   font-weight: 600;
   color: var(--text-subtle);
@@ -283,7 +284,7 @@ a { color: inherit; }
 
 .section__head { max-width: 720px; margin-bottom: var(--s-8); }
 .section__eyebrow {
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 11.5px;
   font-weight: 500;
   color: var(--brand-accent);
@@ -317,7 +318,7 @@ a { color: inherit; }
 .section__h3:first-child { margin-top: 0; }
 
 .sec-label {
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 11px;
   font-weight: 500;
   color: var(--text-subtle);
@@ -340,7 +341,7 @@ a { color: inherit; }
   padding: 80px 0 64px;
 }
 .hero__eyebrow {
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 11px;
   font-weight: 500;
   color: var(--brand-accent);
@@ -377,7 +378,7 @@ a { color: inherit; }
   flex-direction: column;
 }
 .hero__stats .num {
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 24px;
   font-weight: 600;
   color: var(--text);
@@ -445,7 +446,7 @@ a { color: inherit; }
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: var(--s-6); display: flex; flex-direction: column; gap: var(--s-3); }
 
 /* ── COMPONENT: Badge ───────────────────────────────────────────── */
-.badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; font-size: 12px; font-weight: 600; font-family: var(--font-mono); letter-spacing: 0.02em; border-radius: var(--r-pill); background: var(--ink-100); color: var(--text); border: 1px solid var(--border); }
+.badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; font-size: 12px; font-weight: 600; font-family: var(--font-ui); letter-spacing: 0.02em; border-radius: var(--r-pill); background: var(--ink-100); color: var(--text); border: 1px solid var(--border); }
 .badge--accent { background: var(--brand-accent-100); color: var(--brand-accent-600); border-color: transparent; }
 .badge--primary { background: var(--brand-primary); color: #fff; border-color: transparent; }
 .badge--success { background: var(--success-100); color: var(--success); border-color: transparent; }
@@ -457,27 +458,27 @@ a { color: inherit; }
 .sw { display: flex; flex-direction: column; gap: 8px; }
 .sw .chip { height: 96px; border-radius: var(--r-md); border: 1px solid rgba(0,0,0,0.05); position: relative; overflow: hidden; cursor: pointer; transition: transform 0.12s ease; }
 .sw .chip:hover { transform: translateY(-2px); }
-.sw .meta { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); letter-spacing: 0.04em; }
+.sw .meta { display: flex; justify-content: space-between; font-family: var(--font-ui); font-size: 11px; color: var(--text-muted); letter-spacing: 0.04em; }
 .sw .name { color: var(--text); font-weight: 500; font-size: 12px; font-family: var(--font-ui); }
 
 /* ── Spec ───────────────────────────────────────────────────────── */
 .spec { display: grid; grid-template-columns: 120px 1fr 200px; align-items: baseline; gap: var(--s-6); padding: var(--s-4) 0; border-top: 1px solid var(--border); }
 .spec:first-child { border-top: 0; }
-.spec .lbl { font-family: var(--font-mono); font-size: 11px; color: var(--text-subtle); letter-spacing: 0.06em; text-transform: uppercase; }
+.spec .lbl { font-family: var(--font-ui); font-size: 11px; color: var(--text-subtle); letter-spacing: 0.06em; text-transform: uppercase; }
 .spec .ex { color: var(--text); }
-.spec .tok { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); text-align: right; letter-spacing: 0.02em; }
+.spec .tok { font-family: var(--font-ui); font-size: 11px; color: var(--text-muted); text-align: right; letter-spacing: 0.02em; }
 
 /* ── Step ───────────────────────────────────────────────────────── */
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-6); }
 .step { display: flex; flex-direction: column; gap: 14px; }
-.step .num { width: 48px; height: 48px; border-radius: var(--r-md); background: var(--brand-primary); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 18px; font-weight: 600; }
+.step .num { width: 48px; height: 48px; border-radius: var(--r-md); background: var(--brand-primary); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-ui); font-size: 18px; font-weight: 600; }
 .step .n { font-size: 20px; font-weight: 600; color: var(--text); letter-spacing: -0.01em; }
 .step .d { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
 
 /* ── Pricing card ───────────────────────────────────────────────── */
 .price-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: var(--s-6); display: flex; flex-direction: column; gap: var(--s-3); position: relative; }
 .price-card--featured { border-color: var(--brand-primary); box-shadow: 0 0 0 1px var(--brand-primary), var(--sh-2); }
-.price-card .tier-name { font-size: 14px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; font-family: var(--font-mono); }
+.price-card .tier-name { font-size: 14px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; font-family: var(--font-ui); }
 .price-card .price { font-size: 44px; font-weight: 700; letter-spacing: -0.03em; color: var(--text); display: flex; align-items: baseline; gap: 6px; }
 .price-card .price .cur { font-size: 18px; color: var(--text-muted); font-weight: 500; }
 .price-card .price .per { font-size: 14px; color: var(--text-muted); font-weight: 500; }
@@ -553,7 +554,7 @@ a { color: inherit; }
   padding: 8px 16px;
   border-radius: var(--r-pill);
   font-size: 12.5px;
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   letter-spacing: 0.04em;
   opacity: 0;
   pointer-events: none;
@@ -679,22 +680,22 @@ a { color: inherit; }
 
       <div class="cols cols-4">
         <div style="display: flex; flex-direction: column; gap: 12px;">
-          <div style="font-family: var(--font-mono); font-size: 48px; color: var(--brand-accent); font-weight: 600; line-height: 1;">01</div>
+          <div style="font-family: var(--font-ui); font-size: 48px; color: var(--brand-accent); font-weight: 600; line-height: 1;">01</div>
           <div style="font-size: 19px; font-weight: 600; color: var(--text); letter-spacing: -0.015em;">Trust is the product.</div>
           <div style="font-size: 14px; color: var(--text-muted); line-height: 1.55;">Dark navy authority, warm orange moments. We earn trust by showing the work — weights, dimensions, tracking, costs.</div>
         </div>
         <div style="display: flex; flex-direction: column; gap: 12px;">
-          <div style="font-family: var(--font-mono); font-size: 48px; color: var(--brand-accent); font-weight: 600; line-height: 1;">02</div>
+          <div style="font-family: var(--font-ui); font-size: 48px; color: var(--brand-accent); font-weight: 600; line-height: 1;">02</div>
           <div style="font-size: 19px; font-weight: 600; color: var(--text); letter-spacing: -0.015em;">Global by default.</div>
           <div style="font-size: 14px; color: var(--text-muted); line-height: 1.55;">Type that reads in 20 languages. Patterns that respect RTL. Currency, weights, and dates adapt silently to the member.</div>
         </div>
         <div style="display: flex; flex-direction: column; gap: 12px;">
-          <div style="font-family: var(--font-mono); font-size: 48px; color: var(--brand-accent); font-weight: 600; line-height: 1;">03</div>
+          <div style="font-family: var(--font-ui); font-size: 48px; color: var(--brand-accent); font-weight: 600; line-height: 1;">03</div>
           <div style="font-size: 19px; font-weight: 600; color: var(--text); letter-spacing: -0.015em;">Density with air.</div>
           <div style="font-size: 14px; color: var(--text-muted); line-height: 1.55;">Package logistics are data-dense. We keep things compact and legible, then let hero moments breathe.</div>
         </div>
         <div style="display: flex; flex-direction: column; gap: 12px;">
-          <div style="font-family: var(--font-mono); font-size: 48px; color: var(--brand-accent); font-weight: 600; line-height: 1;">04</div>
+          <div style="font-family: var(--font-ui); font-size: 48px; color: var(--brand-accent); font-weight: 600; line-height: 1;">04</div>
           <div style="font-size: 19px; font-weight: 600; color: var(--text); letter-spacing: -0.015em;">Always a next step.</div>
           <div style="font-size: 14px; color: var(--text-muted); line-height: 1.55;">Every screen tells a member what to do next. One primary action, never two.</div>
         </div>
@@ -716,7 +717,7 @@ a { color: inherit; }
         <div style="flex: 10; background: var(--ink-300);"></div>
         <div style="flex: 5; background: var(--brand-accent);"></div>
       </div>
-      <div style="display:flex; font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); gap: 16px; margin-bottom: var(--s-8);">
+      <div style="display:flex; font-family: var(--font-ui); font-size: 11px; color: var(--text-muted); gap: 16px; margin-bottom: var(--s-8);">
         <span><span style="color:var(--text);">60</span> Paper</span>
         <span><span style="color:var(--text);">25</span> Navy</span>
         <span><span style="color:var(--text);">10</span> Ink</span>
@@ -760,19 +761,19 @@ a { color: inherit; }
     <section class="section" id="typography">
       <div class="section__head">
         <div class="section__eyebrow">03 — Foundations / Typography</div>
-        <h2 class="section__title">Poppins, everywhere. Mono for the facts.</h2>
-        <p class="section__lead">Poppins handles every UI and editorial moment. JetBrains Mono handles the technical bits — suite numbers, weights, tracking IDs, prices — so data always reads as data.</p>
+        <h2 class="section__title">Poppins, everywhere.</h2>
+        <p class="section__lead">A single typeface across every surface — UI, display, body, and numeric data. Tabular numerics handle the technical bits (suite numbers, weights, tracking IDs, prices) without needing a separate mono family.</p>
       </div>
 
       <div class="split">
         <div>
-          <div class="sec-label">UI &amp; Display</div>
+          <div class="sec-label">UI · Display · Data</div>
           <div style="font-family: var(--font-ui); font-size: 48px; font-weight: 700; letter-spacing: -0.03em; line-height: 1;">Poppins</div>
-          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); margin-top: 6px;">300 · 400 · 500 · 600 · 700 · 800</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-top: 6px;">300 · 400 · 500 · 600 · 700 · 800</div>
 
-          <div class="sec-label" style="margin-top: var(--s-6);">Mono / Data</div>
-          <div style="font-family: var(--font-mono); font-size: 30px; font-weight: 500; letter-spacing: -0.01em; line-height: 1;">JetBrains Mono</div>
-          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); margin-top: 6px;">400 · 500 · 600 — SUITE-12345 · 4.2 lb · $47.80</div>
+          <div class="sec-label" style="margin-top: var(--s-6);">Numeric / Data sample</div>
+          <div style="font-size: 22px; font-weight: 500; letter-spacing: -0.01em; line-height: 1; font-feature-settings: 'tnum' 1;">SUITE-12345 · 4.2 lb · $47.80</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-top: 6px;">Poppins 500 · tabular-nums · slightly tighter tracking</div>
         </div>
 
         <div class="demo">
@@ -785,8 +786,8 @@ a { color: inherit; }
           <div class="spec"><span class="lbl">Body / Lead</span><span class="ex" style="font-size: 16px; color: var(--text-muted); line-height: 1.5;">Save up to 80% on international shipping.</span><span class="tok">18 / 1.50<br/>400</span></div>
           <div class="spec"><span class="lbl">Body / Default</span><span class="ex" style="font-size: 14px; line-height: 1.55;">Get a US address, shop any store, and ship home.</span><span class="tok">14 / 1.55<br/>400</span></div>
           <div class="spec"><span class="lbl">Caption</span><span class="ex" style="font-size: 12px; color: var(--text-muted);">Rates apply to standard shipments.</span><span class="tok">12 / 1.4<br/>400</span></div>
-          <div class="spec"><span class="lbl">Eyebrow</span><span class="ex" style="font-family: var(--font-mono); font-size: 11px; color: var(--brand-accent); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;">Membership benefit</span><span class="tok">Mono 11 / 0.12em<br/>500 / UPPER</span></div>
-          <div class="spec"><span class="lbl">Data / Numeric</span><span class="ex" style="font-family: var(--font-mono); font-size: 16px; font-weight: 500;">SUITE-12345 · 4.2 lb · $47.80</span><span class="tok">Mono 16<br/>500 / tnum</span></div>
+          <div class="spec"><span class="lbl">Eyebrow</span><span class="ex" style="font-size: 11px; color: var(--brand-accent); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;">Membership benefit</span><span class="tok">11 / 0.12em<br/>500 / UPPER</span></div>
+          <div class="spec"><span class="lbl">Data / Numeric</span><span class="ex" style="font-size: 16px; font-weight: 500; font-feature-settings: 'tnum' 1;">SUITE-12345 · 4.2 lb · $47.80</span><span class="tok">16 / tnum<br/>500</span></div>
         </div>
       </div>
     </section>
@@ -803,36 +804,36 @@ a { color: inherit; }
         <div>
           <div class="sec-label">Spacing scale (8pt base)</div>
           <div style="display: flex; flex-direction: column; gap: 12px;">
-            <div style="display:flex; align-items:center; gap: 16px;"><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); width: 50px;">s-1</div><div style="height: 24px; width: 4px; background: var(--brand-accent);"></div><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">4 px</div></div>
-            <div style="display:flex; align-items:center; gap: 16px;"><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); width: 50px;">s-2</div><div style="height: 24px; width: 8px; background: var(--brand-accent);"></div><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">8 px</div></div>
-            <div style="display:flex; align-items:center; gap: 16px;"><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); width: 50px;">s-3</div><div style="height: 24px; width: 12px; background: var(--brand-accent);"></div><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">12 px</div></div>
-            <div style="display:flex; align-items:center; gap: 16px;"><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); width: 50px;">s-4</div><div style="height: 24px; width: 16px; background: var(--brand-accent);"></div><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">16 px</div></div>
-            <div style="display:flex; align-items:center; gap: 16px;"><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); width: 50px;">s-6</div><div style="height: 24px; width: 24px; background: var(--brand-accent);"></div><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">24 px</div></div>
-            <div style="display:flex; align-items:center; gap: 16px;"><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); width: 50px;">s-8</div><div style="height: 24px; width: 32px; background: var(--brand-accent);"></div><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">32 px</div></div>
-            <div style="display:flex; align-items:center; gap: 16px;"><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); width: 50px;">s-12</div><div style="height: 24px; width: 48px; background: var(--brand-accent);"></div><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">48 px</div></div>
-            <div style="display:flex; align-items:center; gap: 16px;"><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); width: 50px;">s-16</div><div style="height: 24px; width: 64px; background: var(--brand-accent);"></div><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">64 px</div></div>
-            <div style="display:flex; align-items:center; gap: 16px;"><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); width: 50px;">s-24</div><div style="height: 24px; width: 96px; background: var(--brand-accent);"></div><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">96 px</div></div>
+            <div style="display:flex; align-items:center; gap: 16px;"><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted); width: 50px;">s-1</div><div style="height: 24px; width: 4px; background: var(--brand-accent);"></div><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted);">4 px</div></div>
+            <div style="display:flex; align-items:center; gap: 16px;"><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted); width: 50px;">s-2</div><div style="height: 24px; width: 8px; background: var(--brand-accent);"></div><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted);">8 px</div></div>
+            <div style="display:flex; align-items:center; gap: 16px;"><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted); width: 50px;">s-3</div><div style="height: 24px; width: 12px; background: var(--brand-accent);"></div><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted);">12 px</div></div>
+            <div style="display:flex; align-items:center; gap: 16px;"><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted); width: 50px;">s-4</div><div style="height: 24px; width: 16px; background: var(--brand-accent);"></div><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted);">16 px</div></div>
+            <div style="display:flex; align-items:center; gap: 16px;"><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted); width: 50px;">s-6</div><div style="height: 24px; width: 24px; background: var(--brand-accent);"></div><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted);">24 px</div></div>
+            <div style="display:flex; align-items:center; gap: 16px;"><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted); width: 50px;">s-8</div><div style="height: 24px; width: 32px; background: var(--brand-accent);"></div><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted);">32 px</div></div>
+            <div style="display:flex; align-items:center; gap: 16px;"><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted); width: 50px;">s-12</div><div style="height: 24px; width: 48px; background: var(--brand-accent);"></div><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted);">48 px</div></div>
+            <div style="display:flex; align-items:center; gap: 16px;"><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted); width: 50px;">s-16</div><div style="height: 24px; width: 64px; background: var(--brand-accent);"></div><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted);">64 px</div></div>
+            <div style="display:flex; align-items:center; gap: 16px;"><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted); width: 50px;">s-24</div><div style="height: 24px; width: 96px; background: var(--brand-accent);"></div><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted);">96 px</div></div>
           </div>
         </div>
 
         <div>
           <div class="sec-label">Corner radius</div>
           <div style="display: flex; flex-direction: column; gap: 16px;">
-            <div style="display:flex; align-items:center; gap: 14px;"><div style="width: 60px; height: 60px; background: var(--ink-100); border-radius: 4px;"></div><div><div style="font-size: 13px; font-weight: 500;">Sharp</div><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">4px · r-sm</div></div></div>
-            <div style="display:flex; align-items:center; gap: 14px;"><div style="width: 60px; height: 60px; background: var(--ink-100); border-radius: 8px;"></div><div><div style="font-size: 13px; font-weight: 500;">Default</div><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">8px · r-md</div></div></div>
-            <div style="display:flex; align-items:center; gap: 14px;"><div style="width: 60px; height: 60px; background: var(--ink-100); border-radius: 12px;"></div><div><div style="font-size: 13px; font-weight: 500;">Comfortable</div><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">12px · r-lg</div></div></div>
-            <div style="display:flex; align-items:center; gap: 14px;"><div style="width: 60px; height: 60px; background: var(--ink-100); border-radius: 18px;"></div><div><div style="font-size: 13px; font-weight: 500;">Soft</div><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">18px · r-xl</div></div></div>
-            <div style="display:flex; align-items:center; gap: 14px;"><div style="width: 60px; height: 60px; background: var(--ink-100); border-radius: 999px;"></div><div><div style="font-size: 13px; font-weight: 500;">Pill</div><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">999 · r-pill</div></div></div>
+            <div style="display:flex; align-items:center; gap: 14px;"><div style="width: 60px; height: 60px; background: var(--ink-100); border-radius: 4px;"></div><div><div style="font-size: 13px; font-weight: 500;">Sharp</div><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted);">4px · r-sm</div></div></div>
+            <div style="display:flex; align-items:center; gap: 14px;"><div style="width: 60px; height: 60px; background: var(--ink-100); border-radius: 8px;"></div><div><div style="font-size: 13px; font-weight: 500;">Default</div><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted);">8px · r-md</div></div></div>
+            <div style="display:flex; align-items:center; gap: 14px;"><div style="width: 60px; height: 60px; background: var(--ink-100); border-radius: 12px;"></div><div><div style="font-size: 13px; font-weight: 500;">Comfortable</div><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted);">12px · r-lg</div></div></div>
+            <div style="display:flex; align-items:center; gap: 14px;"><div style="width: 60px; height: 60px; background: var(--ink-100); border-radius: 18px;"></div><div><div style="font-size: 13px; font-weight: 500;">Soft</div><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted);">18px · r-xl</div></div></div>
+            <div style="display:flex; align-items:center; gap: 14px;"><div style="width: 60px; height: 60px; background: var(--ink-100); border-radius: 999px;"></div><div><div style="font-size: 13px; font-weight: 500;">Pill</div><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted);">999 · r-pill</div></div></div>
           </div>
         </div>
 
         <div>
           <div class="sec-label">Elevation</div>
           <div style="display: flex; flex-direction: column; gap: 22px;">
-            <div style="display:flex; align-items:center; gap: 14px;"><div style="width: 72px; height: 52px; background: var(--surface); border-radius: 8px; box-shadow: var(--sh-0);"></div><div><div style="font-size: 13px; font-weight: 500;">Flat</div><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">sh-0 · border</div></div></div>
-            <div style="display:flex; align-items:center; gap: 14px;"><div style="width: 72px; height: 52px; background: var(--surface); border-radius: 8px; box-shadow: var(--sh-1);"></div><div><div style="font-size: 13px; font-weight: 500;">Raised</div><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">sh-1 · inputs</div></div></div>
-            <div style="display:flex; align-items:center; gap: 14px;"><div style="width: 72px; height: 52px; background: var(--surface); border-radius: 8px; box-shadow: var(--sh-2);"></div><div><div style="font-size: 13px; font-weight: 500;">Card</div><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">sh-2 · cards</div></div></div>
-            <div style="display:flex; align-items:center; gap: 14px;"><div style="width: 72px; height: 52px; background: var(--surface); border-radius: 8px; box-shadow: var(--sh-3);"></div><div><div style="font-size: 13px; font-weight: 500;">Floating</div><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">sh-3 · modals</div></div></div>
+            <div style="display:flex; align-items:center; gap: 14px;"><div style="width: 72px; height: 52px; background: var(--surface); border-radius: 8px; box-shadow: var(--sh-0);"></div><div><div style="font-size: 13px; font-weight: 500;">Flat</div><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted);">sh-0 · border</div></div></div>
+            <div style="display:flex; align-items:center; gap: 14px;"><div style="width: 72px; height: 52px; background: var(--surface); border-radius: 8px; box-shadow: var(--sh-1);"></div><div><div style="font-size: 13px; font-weight: 500;">Raised</div><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted);">sh-1 · inputs</div></div></div>
+            <div style="display:flex; align-items:center; gap: 14px;"><div style="width: 72px; height: 52px; background: var(--surface); border-radius: 8px; box-shadow: var(--sh-2);"></div><div><div style="font-size: 13px; font-weight: 500;">Card</div><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted);">sh-2 · cards</div></div></div>
+            <div style="display:flex; align-items:center; gap: 14px;"><div style="width: 72px; height: 52px; background: var(--surface); border-radius: 8px; box-shadow: var(--sh-3);"></div><div><div style="font-size: 13px; font-weight: 500;">Floating</div><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted);">sh-3 · modals</div></div></div>
           </div>
         </div>
       </div>
@@ -848,16 +849,16 @@ a { color: inherit; }
 
       <div class="cols cols-2">
         <div style="background: #f7f9fc; color: #0b1420; border-radius: var(--r-lg); padding: var(--s-6); display: flex; flex-direction: column; gap: var(--s-4);">
-          <div style="font-family: var(--font-mono); font-size: 11px; color: #667793; letter-spacing: 0.1em; text-transform: uppercase;">Light mode</div>
-          <div style="display: flex; gap: 8px;"><span style="padding: 4px 10px; font-size: 12px; font-weight: 600; font-family: var(--font-mono); background: #fde8dd; color: #c44a22; border-radius: 999px;">NEW</span><span style="padding: 4px 10px; font-size: 12px; font-weight: 600; font-family: var(--font-mono); background: #e2f4ea; color: #1f8f5c; border-radius: 999px;">READY TO SEND</span></div>
+          <div style="font-family: var(--font-ui); font-size: 11px; color: #667793; letter-spacing: 0.1em; text-transform: uppercase;">Light mode</div>
+          <div style="display: flex; gap: 8px;"><span style="padding: 4px 10px; font-size: 12px; font-weight: 600; font-family: var(--font-ui); background: #fde8dd; color: #c44a22; border-radius: 999px;">NEW</span><span style="padding: 4px 10px; font-size: 12px; font-weight: 600; font-family: var(--font-ui); background: #e2f4ea; color: #1f8f5c; border-radius: 999px;">READY TO SEND</span></div>
           <h3 style="font-size: 22px; font-weight: 600; letter-spacing: -0.015em; margin: 0; color:#0b1420;">Your package is ready.</h3>
           <p style="font-size: 14px; color: #667793; margin: 0;">Ship it now or add more orders — storage is free for 30 days.</p>
           <div style="display: flex; gap: 8px;"><button class="btn btn--primary btn--sm">Ship now</button><button class="btn btn--sm" style="background:transparent;color:#0b1420;border:1px solid #b6c1d2;">Wait</button></div>
         </div>
 
         <div style="background: #0a1220; color: #eef2f8; border-radius: var(--r-lg); padding: var(--s-6); display: flex; flex-direction: column; gap: var(--s-4);">
-          <div style="font-family: var(--font-mono); font-size: 11px; color: #97a4bc; letter-spacing: 0.1em; text-transform: uppercase;">Dark mode</div>
-          <div style="display: flex; gap: 8px;"><span style="padding: 4px 10px; font-size: 12px; font-weight: 600; font-family: var(--font-mono); background: rgba(232,93,47,0.15); color: #ff9566; border-radius: 999px;">NEW</span><span style="padding: 4px 10px; font-size: 12px; font-weight: 600; font-family: var(--font-mono); background: rgba(31,143,92,0.2); color: #5dcb9a; border-radius: 999px;">READY TO SEND</span></div>
+          <div style="font-family: var(--font-ui); font-size: 11px; color: #97a4bc; letter-spacing: 0.1em; text-transform: uppercase;">Dark mode</div>
+          <div style="display: flex; gap: 8px;"><span style="padding: 4px 10px; font-size: 12px; font-weight: 600; font-family: var(--font-ui); background: rgba(232,93,47,0.15); color: #ff9566; border-radius: 999px;">NEW</span><span style="padding: 4px 10px; font-size: 12px; font-weight: 600; font-family: var(--font-ui); background: rgba(31,143,92,0.2); color: #5dcb9a; border-radius: 999px;">READY TO SEND</span></div>
           <h3 style="font-size: 22px; font-weight: 600; letter-spacing: -0.015em; margin: 0; color: #eef2f8;">Your package is ready.</h3>
           <p style="font-size: 14px; color: #97a4bc; margin: 0;">Ship it now or add more orders — storage is free for 30 days.</p>
           <div style="display: flex; gap: 8px;"><button class="btn btn--primary btn--sm">Ship now</button><button class="btn btn--sm" style="background: transparent; color: #eef2f8; border: 1px solid #33425e;">Wait</button></div>
@@ -875,11 +876,11 @@ a { color: inherit; }
 
       <h3 class="section__h3">Variants</h3>
       <div class="demo">
-        <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;"><button class="btn btn--primary">Sign up free</button><span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">btn--primary</span></div>
-        <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;"><button class="btn btn--secondary">Learn more</button><span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">btn--secondary</span></div>
-        <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;"><button class="btn btn--outline">Shipping calculator</button><span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">btn--outline</span></div>
-        <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;"><button class="btn btn--ghost">Skip for now</button><span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">btn--ghost</span></div>
-        <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;"><button class="btn btn--link">View all countries →</button><span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">btn--link</span></div>
+        <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;"><button class="btn btn--primary">Sign up free</button><span style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted);">btn--primary</span></div>
+        <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;"><button class="btn btn--secondary">Learn more</button><span style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted);">btn--secondary</span></div>
+        <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;"><button class="btn btn--outline">Shipping calculator</button><span style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted);">btn--outline</span></div>
+        <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;"><button class="btn btn--ghost">Skip for now</button><span style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted);">btn--ghost</span></div>
+        <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;"><button class="btn btn--link">View all countries →</button><span style="font-family: var(--font-ui); font-size: 11px; color: var(--text-muted);">btn--link</span></div>
       </div>
 
       <h3 class="section__h3">Sizes</h3>
@@ -946,7 +947,7 @@ a { color: inherit; }
           <h3 class="section__h3">Selection controls</h3>
           <div class="demo">
             <div>
-              <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em;">Segmented</div>
+              <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px; font-family: var(--font-ui); text-transform: uppercase; letter-spacing: 0.06em;">Segmented</div>
               <div class="seg">
                 <button data-on>Premium</button>
                 <button>Business</button>
@@ -954,7 +955,7 @@ a { color: inherit; }
               </div>
             </div>
             <div>
-              <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em;">Checkbox / Radio</div>
+              <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px; font-family: var(--font-ui); text-transform: uppercase; letter-spacing: 0.06em;">Checkbox / Radio</div>
               <div style="display: flex; flex-direction: column; gap: 10px;">
                 <label style="display:flex; gap:10px; align-items: center; font-size: 14px; cursor: pointer;">
                   <span style="width: 18px; height: 18px; background: var(--brand-accent); border-radius: 4px; display:inline-flex; align-items: center; justify-content: center;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M1.5 5l2.5 2.5L8.5 2"/></svg></span>
@@ -975,7 +976,7 @@ a { color: inherit; }
               </div>
             </div>
             <div>
-              <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em;">Toggle</div>
+              <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px; font-family: var(--font-ui); text-transform: uppercase; letter-spacing: 0.06em;">Toggle</div>
               <label style="display: flex; gap: 12px; align-items: center; font-size: 14px; cursor:pointer;">
                 <span style="width:36px;height:22px;background:var(--brand-accent);border-radius:999px;position:relative;display:inline-block;"><span style="position:absolute;top:3px;left:17px;width:16px;height:16px;background:#fff;border-radius:50%;"></span></span>
                 Notify me when packages arrive
@@ -1011,15 +1012,15 @@ a { color: inherit; }
         <div class="card">
           <div style="display: flex; justify-content: space-between; align-items: flex-start;">
             <div>
-              <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-subtle); letter-spacing: 0.04em;">PKG-48219</div>
+              <div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-subtle); letter-spacing: 0.04em;">PKG-48219</div>
               <div style="font-size: 16px; font-weight: 600; margin-top: 4px;">Allbirds Tree Runner</div>
             </div>
             <span class="badge badge--success"><span class="dot"></span>Ready to send</span>
           </div>
           <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 8px;">
-            <div><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-subtle); text-transform: uppercase;">Weight</div><div style="font-family: var(--font-mono); font-size: 15px; font-weight: 500;">2.1 lb</div></div>
-            <div><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-subtle); text-transform: uppercase;">Declared</div><div style="font-family: var(--font-mono); font-size: 15px; font-weight: 500;">$98.00</div></div>
-            <div><div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-subtle); text-transform: uppercase;">Arrived</div><div style="font-family: var(--font-mono); font-size: 15px; font-weight: 500;">Apr 18</div></div>
+            <div><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-subtle); text-transform: uppercase;">Weight</div><div style="font-family: var(--font-ui); font-size: 15px; font-weight: 500;">2.1 lb</div></div>
+            <div><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-subtle); text-transform: uppercase;">Declared</div><div style="font-family: var(--font-ui); font-size: 15px; font-weight: 500;">$98.00</div></div>
+            <div><div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-subtle); text-transform: uppercase;">Arrived</div><div style="font-family: var(--font-ui); font-size: 15px; font-weight: 500;">Apr 18</div></div>
           </div>
           <div style="display: flex; gap: 8px; margin-top: 4px;">
             <button class="btn btn--primary btn--sm" style="flex:1;">Create ship request</button>
@@ -1030,7 +1031,7 @@ a { color: inherit; }
         <div class="card">
           <div style="display: flex; justify-content: space-between; align-items: flex-start;">
             <div>
-              <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-subtle); letter-spacing: 0.04em;">PKG-48220</div>
+              <div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-subtle); letter-spacing: 0.04em;">PKG-48220</div>
               <div style="font-size: 16px; font-weight: 600; margin-top: 4px;">Patagonia Nano Puff</div>
             </div>
             <span class="badge badge--warning"><span class="dot"></span>Action required</span>
@@ -1084,20 +1085,20 @@ a { color: inherit; }
       <div class="demo">
         <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:24px;">
           <div>
-            <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-subtle);text-transform:uppercase;letter-spacing:0.06em;">Suite</div>
-            <div style="font-family:var(--font-mono);font-size:20px;font-weight:500;">12345</div>
+            <div style="font-family:var(--font-ui);font-size:11px;color:var(--text-subtle);text-transform:uppercase;letter-spacing:0.06em;">Suite</div>
+            <div style="font-family:var(--font-ui);font-size:20px;font-weight:500;">12345</div>
           </div>
           <div>
-            <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-subtle);text-transform:uppercase;letter-spacing:0.06em;">Weight</div>
-            <div style="font-family:var(--font-mono);font-size:20px;font-weight:500;">4.2 <span style="color:var(--text-muted);font-size:14px;">lb</span></div>
+            <div style="font-family:var(--font-ui);font-size:11px;color:var(--text-subtle);text-transform:uppercase;letter-spacing:0.06em;">Weight</div>
+            <div style="font-family:var(--font-ui);font-size:20px;font-weight:500;">4.2 <span style="color:var(--text-muted);font-size:14px;">lb</span></div>
           </div>
           <div>
-            <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-subtle);text-transform:uppercase;letter-spacing:0.06em;">Saved</div>
-            <div style="font-family:var(--font-mono);font-size:20px;font-weight:500;color:var(--success);">$47.80</div>
+            <div style="font-family:var(--font-ui);font-size:11px;color:var(--text-subtle);text-transform:uppercase;letter-spacing:0.06em;">Saved</div>
+            <div style="font-family:var(--font-ui);font-size:20px;font-weight:500;color:var(--success);">$47.80</div>
           </div>
           <div>
-            <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-subtle);text-transform:uppercase;letter-spacing:0.06em;">ETA</div>
-            <div style="font-family:var(--font-mono);font-size:20px;font-weight:500;">3 days</div>
+            <div style="font-family:var(--font-ui);font-size:11px;color:var(--text-subtle);text-transform:uppercase;letter-spacing:0.06em;">ETA</div>
+            <div style="font-family:var(--font-ui);font-size:20px;font-weight:500;">3 days</div>
           </div>
         </div>
       </div>
@@ -1125,22 +1126,22 @@ a { color: inherit; }
         <div>
           <h3 class="section__h3">Core library</h3>
           <div class="demo" style="display: grid; grid-template-columns: repeat(8, 1fr); gap: var(--s-5); color: var(--text);">
-            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7L12 12l8.7-5M12 22V12"/></svg><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-subtle);">package</span></div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 13l3 0 2-7h11l2 7h3M5 13v5h4v-5M15 13v5h4v-5"/><circle cx="7" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/></svg><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-subtle);">ship</span></div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></svg><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-subtle);">globe</span></div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-subtle);">member</span></div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-subtle);">address</span></div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-subtle);">time</span></div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-subtle);">price</span></div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4.5L18 22l-6-4-6 4 1.5-8.5L2 9h7z"/></svg><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-subtle);">star</span></div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-subtle);">check</span></div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 17.5v.5"/></svg><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-subtle);">alert</span></div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18M8 4v4M16 4v4"/></svg><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-subtle);">calendar</span></div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-subtle);">card</span></div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-subtle);">search</span></div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-subtle);">menu</span></div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/></svg><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-subtle);">chat</span></div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-subtle);">location</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7L12 12l8.7-5M12 22V12"/></svg><span style="font-family:var(--font-ui);font-size:10px;color:var(--text-subtle);">package</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 13l3 0 2-7h11l2 7h3M5 13v5h4v-5M15 13v5h4v-5"/><circle cx="7" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/></svg><span style="font-family:var(--font-ui);font-size:10px;color:var(--text-subtle);">ship</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></svg><span style="font-family:var(--font-ui);font-size:10px;color:var(--text-subtle);">globe</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span style="font-family:var(--font-ui);font-size:10px;color:var(--text-subtle);">member</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg><span style="font-family:var(--font-ui);font-size:10px;color:var(--text-subtle);">address</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span style="font-family:var(--font-ui);font-size:10px;color:var(--text-subtle);">time</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span style="font-family:var(--font-ui);font-size:10px;color:var(--text-subtle);">price</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4.5L18 22l-6-4-6 4 1.5-8.5L2 9h7z"/></svg><span style="font-family:var(--font-ui);font-size:10px;color:var(--text-subtle);">star</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg><span style="font-family:var(--font-ui);font-size:10px;color:var(--text-subtle);">check</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 17.5v.5"/></svg><span style="font-family:var(--font-ui);font-size:10px;color:var(--text-subtle);">alert</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18M8 4v4M16 4v4"/></svg><span style="font-family:var(--font-ui);font-size:10px;color:var(--text-subtle);">calendar</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg><span style="font-family:var(--font-ui);font-size:10px;color:var(--text-subtle);">card</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg><span style="font-family:var(--font-ui);font-size:10px;color:var(--text-subtle);">search</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span style="font-family:var(--font-ui);font-size:10px;color:var(--text-subtle);">menu</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/></svg><span style="font-family:var(--font-ui);font-size:10px;color:var(--text-subtle);">chat</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span style="font-family:var(--font-ui);font-size:10px;color:var(--text-subtle);">location</span></div>
           </div>
         </div>
       </div>
@@ -1159,19 +1160,19 @@ a { color: inherit; }
           <div class="num">01</div>
           <div class="n">Sign up free</div>
           <div class="d">Get a personal US address and unique suite number in under a minute. No credit card required.</div>
-          <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-subtle);letter-spacing:0.06em;text-transform:uppercase;">~ 60 seconds</div>
+          <div style="font-family:var(--font-ui);font-size:11px;color:var(--text-subtle);letter-spacing:0.06em;text-transform:uppercase;">~ 60 seconds</div>
         </div>
         <div class="step">
           <div class="num">02</div>
           <div class="n">Shop any US store</div>
           <div class="d">Check out with your new US suite address. We'll receive your packages, log them, and notify you.</div>
-          <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-subtle);letter-spacing:0.06em;text-transform:uppercase;">Consolidate for free</div>
+          <div style="font-family:var(--font-ui);font-size:11px;color:var(--text-subtle);letter-spacing:0.06em;text-transform:uppercase;">Consolidate for free</div>
         </div>
         <div class="step">
           <div class="num">03</div>
           <div class="n">We ship worldwide</div>
           <div class="d">Pick your carrier and speed. We pack, insure, and send. Tracking from door to door.</div>
-          <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-subtle);letter-spacing:0.06em;text-transform:uppercase;">220+ countries</div>
+          <div style="font-family:var(--font-ui);font-size:11px;color:var(--text-subtle);letter-spacing:0.06em;text-transform:uppercase;">220+ countries</div>
         </div>
       </div>
 
@@ -1273,7 +1274,7 @@ a { color: inherit; }
           </div>
         </div>
         <div style="display: flex; align-items: center; gap: 14px;">
-          <div style="font-family: var(--font-mono); font-size: 12px; color: rgba(255,255,255,0.6); letter-spacing: 0.06em;">SUITE-12345</div>
+          <div style="font-family: var(--font-ui); font-size: 12px; color: rgba(255,255,255,0.6); letter-spacing: 0.06em;">SUITE-12345</div>
           <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--brand-accent); color: #fff; display:inline-flex; align-items:center; justify-content:center; font-size: 13px; font-weight: 600;">AH</div>
         </div>
       </nav>
@@ -1285,19 +1286,19 @@ a { color: inherit; }
           <div style="font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 14px; line-height: 1.5; max-width: 260px;">Package forwarding and international shipping to 220+ countries since 1997.</div>
         </div>
         <div>
-          <div style="font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px;">Product</div>
+          <div style="font-family: var(--font-ui); font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px;">Product</div>
           <div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px;"><a style="color: rgba(255,255,255,0.85); text-decoration:none;">How it works</a><a style="color: rgba(255,255,255,0.85); text-decoration:none;">Benefits</a><a style="color: rgba(255,255,255,0.85); text-decoration:none;">Pricing</a><a style="color: rgba(255,255,255,0.85); text-decoration:none;">Calculator</a></div>
         </div>
         <div>
-          <div style="font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px;">Support</div>
+          <div style="font-family: var(--font-ui); font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px;">Support</div>
           <div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px;"><a style="color: rgba(255,255,255,0.85); text-decoration:none;">FAQ</a><a style="color: rgba(255,255,255,0.85); text-decoration:none;">Contact us</a><a style="color: rgba(255,255,255,0.85); text-decoration:none;">Prohibited items</a><a style="color: rgba(255,255,255,0.85); text-decoration:none;">Tracking</a></div>
         </div>
         <div>
-          <div style="font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px;">Company</div>
+          <div style="font-family: var(--font-ui); font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px;">Company</div>
           <div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px;"><a style="color: rgba(255,255,255,0.85); text-decoration:none;">About</a><a style="color: rgba(255,255,255,0.85); text-decoration:none;">Careers</a><a style="color: rgba(255,255,255,0.85); text-decoration:none;">Press</a><a style="color: rgba(255,255,255,0.85); text-decoration:none;">Blog</a></div>
         </div>
         <div>
-          <div style="font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px;">Legal</div>
+          <div style="font-family: var(--font-ui); font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px;">Legal</div>
           <div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px;"><a style="color: rgba(255,255,255,0.85); text-decoration:none;">Terms</a><a style="color: rgba(255,255,255,0.85); text-decoration:none;">Privacy</a><a style="color: rgba(255,255,255,0.85); text-decoration:none;">Accessibility</a></div>
         </div>
       </div>
@@ -1327,16 +1328,16 @@ a { color: inherit; }
             <button class="btn btn--outline btn--lg">See how it works</button>
           </div>
           <div style="display: flex; gap: 32px; padding-top: 20px; border-top: 1px solid var(--border); flex-wrap: wrap;">
-            <div><div style="font-family: var(--font-mono); font-size: 22px; font-weight: 600;">220+</div><div style="font-size: 12px; color: var(--text-muted);">Countries served</div></div>
-            <div><div style="font-family: var(--font-mono); font-size: 22px; font-weight: 600;">80%</div><div style="font-size: 12px; color: var(--text-muted);">Avg. savings</div></div>
-            <div><div style="font-family: var(--font-mono); font-size: 22px; font-weight: 600;">24/7</div><div style="font-size: 12px; color: var(--text-muted);">Chat support</div></div>
+            <div><div style="font-family: var(--font-ui); font-size: 22px; font-weight: 600;">220+</div><div style="font-size: 12px; color: var(--text-muted);">Countries served</div></div>
+            <div><div style="font-family: var(--font-ui); font-size: 22px; font-weight: 600;">80%</div><div style="font-size: 12px; color: var(--text-muted);">Avg. savings</div></div>
+            <div><div style="font-family: var(--font-ui); font-size: 22px; font-weight: 600;">24/7</div><div style="font-size: 12px; color: var(--text-muted);">Chat support</div></div>
           </div>
         </div>
 
         <div style="background: repeating-linear-gradient(135deg, var(--ink-100) 0 12px, var(--ink-150) 12px 24px); position: relative; display: flex; align-items: center; justify-content: center; min-height: 360px;">
           <div style="position: absolute; inset: 32px; background: var(--surface); border: 1px dashed var(--border-strong); border-radius: var(--r-md); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 6px;">
-            <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase;">HERO IMAGE</div>
-            <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-subtle);">1200×900 · member + package</div>
+            <div style="font-family: var(--font-ui); font-size: 12px; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase;">HERO IMAGE</div>
+            <div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-subtle);">1200×900 · member + package</div>
           </div>
         </div>
       </div>
@@ -1353,8 +1354,8 @@ a { color: inherit; }
       <div class="cols cols-3">
         <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: var(--s-6); display: flex; flex-direction: column; gap: var(--s-4);">
           <div style="display: flex; align-items: center; gap: 8px;">
-            <div style="width: 24px; height: 24px; background: var(--brand-accent); color: #fff; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; font-family: var(--font-mono);">1</div>
-            <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-subtle); letter-spacing: 0.08em; text-transform: uppercase;">Step 1 of 3</div>
+            <div style="width: 24px; height: 24px; background: var(--brand-accent); color: #fff; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; font-family: var(--font-ui);">1</div>
+            <div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-subtle); letter-spacing: 0.08em; text-transform: uppercase;">Step 1 of 3</div>
           </div>
           <div>
             <h3 style="font-size: 20px; font-weight: 600; letter-spacing: -0.015em; margin: 0 0 6px 0;">Create your suite</h3>
@@ -1372,8 +1373,8 @@ a { color: inherit; }
 
         <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: var(--s-6); display: flex; flex-direction: column; gap: var(--s-4);">
           <div style="display: flex; align-items: center; gap: 8px;">
-            <div style="width: 24px; height: 24px; background: var(--brand-accent); color: #fff; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; font-family: var(--font-mono);">2</div>
-            <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-subtle); letter-spacing: 0.08em; text-transform: uppercase;">Step 2 of 3</div>
+            <div style="width: 24px; height: 24px; background: var(--brand-accent); color: #fff; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; font-family: var(--font-ui);">2</div>
+            <div style="font-family: var(--font-ui); font-size: 11px; color: var(--text-subtle); letter-spacing: 0.08em; text-transform: uppercase;">Step 2 of 3</div>
           </div>
           <div>
             <h3 style="font-size: 20px; font-weight: 600; letter-spacing: -0.015em; margin: 0 0 6px 0;">Choose a plan</h3>
@@ -1408,13 +1409,13 @@ a { color: inherit; }
         <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: var(--s-6); display: flex; flex-direction: column; gap: var(--s-4);">
           <div style="display: flex; align-items: center; gap: 8px;">
             <svg class="ic-md" viewBox="0 0 24 24" fill="var(--success)" stroke="none"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-1.5 14.3l-4-4 1.4-1.4 2.6 2.6 5.6-5.6 1.4 1.4z"/></svg>
-            <div style="font-family: var(--font-mono); font-size: 11px; color: var(--success); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600;">Suite ready</div>
+            <div style="font-family: var(--font-ui); font-size: 11px; color: var(--success); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600;">Suite ready</div>
           </div>
           <div>
             <h3 style="font-size: 20px; font-weight: 600; letter-spacing: -0.015em; margin: 0 0 6px 0;">You're in.</h3>
             <p style="font-size: 13px; color: var(--text-muted); margin: 0;">Start using this US address at any store — we'll receive your packages.</p>
           </div>
-          <div style="background: var(--brand-primary); color: #fff; border-radius: var(--r-md); padding: var(--s-5); font-family: var(--font-mono); line-height: 1.5;">
+          <div style="background: var(--brand-primary); color: #fff; border-radius: var(--r-md); padding: var(--s-5); font-family: var(--font-ui); line-height: 1.5;">
             <div style="font-size: 10px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">Your US Address</div>
             <div style="font-size: 13px;">Amira Hassan</div>
             <div style="font-size: 13px;">4299 Express Lane</div>
@@ -1460,15 +1461,15 @@ a { color: inherit; }
             <div style="display: flex; gap: 10px; flex-wrap: wrap;"><button class="btn btn--primary">Get my free US address</button><button class="btn btn--outline">See how it works</button></div>
           </div>
           <div style="background: repeating-linear-gradient(135deg, var(--ink-100) 0 10px, var(--ink-150) 10px 20px); border-radius: var(--r-md); position: relative; min-height: 240px;">
-            <div style="position: absolute; inset: 20px; background: var(--surface); border: 1px dashed var(--border-strong); border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase;">HERO IMAGE</div>
+            <div style="position: absolute; inset: 20px; background: var(--surface); border: 1px dashed var(--border-strong); border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; font-family: var(--font-ui); font-size: 11px; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase;">HERO IMAGE</div>
           </div>
         </div>
 
         <div style="padding: 32px 40px; background: var(--ink-50); border-bottom: 1px solid var(--border);">
           <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
-            <div style="display:flex; gap:14px; align-items: flex-start;"><div style="width: 32px; height: 32px; background: var(--brand-primary); color:#fff; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; font-family: var(--font-mono); flex-shrink: 0;">01</div><div><div style="font-weight: 600; font-size: 15px;">Sign up free</div><div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">US address in under a minute.</div></div></div>
-            <div style="display:flex; gap:14px; align-items: flex-start;"><div style="width: 32px; height: 32px; background: var(--brand-primary); color:#fff; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; font-family: var(--font-mono); flex-shrink: 0;">02</div><div><div style="font-weight: 600; font-size: 15px;">Shop any US store</div><div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">We receive, log, and notify.</div></div></div>
-            <div style="display:flex; gap:14px; align-items: flex-start;"><div style="width: 32px; height: 32px; background: var(--brand-primary); color:#fff; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; font-family: var(--font-mono); flex-shrink: 0;">03</div><div><div style="font-weight: 600; font-size: 15px;">Ship worldwide</div><div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">220+ countries, all carriers.</div></div></div>
+            <div style="display:flex; gap:14px; align-items: flex-start;"><div style="width: 32px; height: 32px; background: var(--brand-primary); color:#fff; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; font-family: var(--font-ui); flex-shrink: 0;">01</div><div><div style="font-weight: 600; font-size: 15px;">Sign up free</div><div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">US address in under a minute.</div></div></div>
+            <div style="display:flex; gap:14px; align-items: flex-start;"><div style="width: 32px; height: 32px; background: var(--brand-primary); color:#fff; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; font-family: var(--font-ui); flex-shrink: 0;">02</div><div><div style="font-weight: 600; font-size: 15px;">Shop any US store</div><div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">We receive, log, and notify.</div></div></div>
+            <div style="display:flex; gap:14px; align-items: flex-start;"><div style="width: 32px; height: 32px; background: var(--brand-primary); color:#fff; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; font-family: var(--font-ui); flex-shrink: 0;">03</div><div><div style="font-weight: 600; font-size: 15px;">Ship worldwide</div><div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">220+ countries, all carriers.</div></div></div>
           </div>
         </div>
 
