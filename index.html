@@ -150,13 +150,12 @@ a { color: inherit; }
   text-decoration: none;
 }
 [data-theme="dark"] .header__brand { color: var(--text); }
-.header__brand .mark {
-  width: 22px;
-  height: 22px;
-  background: var(--brand-accent);
-  border-radius: 4px;
-  display: inline-block;
+.header__brand .brand-logo {
+  height: 36px;
+  width: auto;
+  display: block;
 }
+[data-theme="dark"] .header__brand .brand-logo { filter: brightness(0) invert(1); }
 .header__brand .ver {
   font-family: var(--font-ui);
   font-size: 11px;
@@ -583,10 +582,9 @@ a { color: inherit; }
 <body>
 
 <header class="header">
-  <a class="header__brand" href="#top">
-    <span class="mark"></span>
-    <span>MyUS</span>
-    <span class="ver">DS v1.0</span>
+  <a class="header__brand" href="#top" aria-label="MyUS Design System">
+    <img src="logo.svg" alt="MyUS" class="brand-logo" />
+    <span class="ver">Design System v1.0</span>
   </a>
   <div class="header__actions">
     <button class="menu-toggle" id="menuBtn" aria-label="Open navigation">
