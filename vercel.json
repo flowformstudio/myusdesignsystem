@@ -1,5 +1,4 @@
 {
-  "rewrites": [
-    { "source": "/", "destination": "/MyUS Design System.html" }
-  ]
+  "cleanUrls": true,
+  "trailingSlash": false
 }
